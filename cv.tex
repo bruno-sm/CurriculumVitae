@@ -1,0 +1,231 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+
+\usepackage[a4paper]{geometry}
+\geometry{top=0.5cm, bottom=0cm, left=0cm, right=0.7cm}
+
+\usepackage[12pt]{moresize}
+\renewcommand{\normalsize}{\fontsize{13}{16}\selectfont}
+\renewcommand{\small}{\fontsize{12}{14}\selectfont}
+
+\usepackage[most]{tcolorbox}
+\definecolor{base-color}{HTML}{f6f6f6}
+\definecolor{base2-color}{HTML}{a9a9a9}
+\definecolor{text-color}{HTML}{2c2c2c}
+\definecolor{text2-color}{HTML}{7b7b7b}
+\definecolor{box-color}{HTML}{caebf2}
+\definecolor{highlight-color}{HTML}{ff3b3f}
+\usepackage{pagecolor,lipsum}
+
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{fancyhdr}				
+\pagestyle{fancy}
+
+% remove top header line
+\renewcommand{\headrulewidth}{0pt} 
+
+%remove botttom header line
+\renewcommand{\footrulewidth}{0pt}	  	
+
+%remove pagenum
+\renewcommand{\thepage}{}	
+
+%remove section num		
+\renewcommand{\thesection}{}
+
+\usepackage{graphicx}
+
+\newcommand{\icon}[2]{\includegraphics[height=#2]{img/#1}}	
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{dashrule}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+
+\newcommand\score[2]{
+	\pgfmathsetmacro\pgfxa{#1+1}
+	\tikzstyle{scorestars}=[star, star points=5, star point ratio=2.25, draw,inner sep=1.3pt,anchor=outer point 3]
+	\begin{tikzpicture}[baseline]
+	\foreach \i in {1,...,#2} {
+		\pgfmathparse{(\i<=#1?"highlight-color":"base2-color")}
+		\edef\starcolor{\pgfmathresult}
+		\draw (\i*2.2ex,0) node[draw=\starcolor,name=star\i,scorestars,minimum size=14pt,fill=\starcolor,rounded corners=0.5pt]  {};
+	}
+	\end{tikzpicture}
+}
+
+\usepackage[absolute,overlay]{textpos}
+
+
+\begin{document}
+	\pagecolor{base-color}
+	\pagestyle{fancy}	
+	
+	\begin{tabular}[c]{ c c }
+		\parbox[c]{0.6\linewidth}{
+			\HUGE{\textcolor{base2-color}{\textbf{\uppercase{Bruno}}}} \medskip\\
+			\HUGE{\textcolor{base2-color}{\textbf{\uppercase{Santidrián}}}} \bigskip \\
+			\HUGE{\textcolor{base2-color}{\textbf{\uppercase{Manzanedo}}}} \medskip \\
+			\LARGE{\textcolor{base2-color}{02 - 09 - 1996}}\\
+		}&
+		\parbox{0.4\textwidth}{
+			\begin{tabular}[c]{ c l }
+				\href{mailto:bruno-sm+wo@gmail.com}{\icon{mail.png}{14pt}} & \textcolor{text2-color}{\href{mailto:bruno-sm+wo@gmail.com}{bruno-sm+wo@gmail.com}} \medskip \\
+				\href{https://www.github.com/bruno-sm}{\icon{github.png}{22pt}} & \textcolor{text2-color}{\href{https://www.github.com/bruno-sm}{github.com/bruno-sm}} \medskip \\
+				\href{https://bruno-sm.github.io}{\icon{web.png}{22pt}} & \textcolor{text2-color}{\href{https://bruno-sm.github.io}{bruno-sm.github.io}} \medskip \\
+				\href{tel:34635684768}{\icon{phone.png}{22pt}} & \textcolor{text2-color}{\href{tel:34635684768}{+34 635684768}} \medskip \\
+				\href{https://www.openstreetmap.org/relation/344165\#map=7/42.345/-3.690}{\icon{location.png}{22pt}} & \textcolor{text2-color}{\href{https://www.openstreetmap.org/relation/344165\#map=7/42.345/-3.690}{Burgos, España}}\\
+			\end{tabular}
+		}
+	\end{tabular}
+
+	\vspace*{-0.3cm}
+	\hspace*{-0.75cm}
+	\begin{minipage}[t]{0.65\textwidth}
+		\begin{tcolorbox}[colback=box-color, sharp corners=all, width=0.9\textwidth, height=6.4cm, boxrule=0pt, colframe=box-color]	
+			{\bigskip \color{base-color} \hspace*{-1cm} \rule{1.2\textwidth}{0.1cm}}
+			{\vspace*{-1.15cm}
+			\centering
+			\begin{tcolorbox}[left=1mm, right=1mm, top=1mm, bottom=1mm, colback=base-color, boxrule=0pt, colframe=base-color, width=5.4cm]
+				\textcolor{text2-color}{\large Formación Académica}
+			\end{tcolorbox}}
+			\medskip
+			\normalsize
+			\textcolor{text-color}{Graduado en {\color{highlight-color}Matemáticas} por la Universidad de Granada} \smallskip\\
+			\color{base-color} \hdashrule[0.5ex]{1.05\textwidth}{0.8mm}{2.5mm} \smallskip
+			\textcolor{text-color}{Graduado en {\color{highlight-color}Ingeniería Informática} por la Universidad de Granada con mención en Computación y Sistemas Inteligentes}
+			
+			\bigskip
+			\centering
+			\begin{tcolorbox}[left=1mm, right=1mm, top=1mm, bottom=1mm, colback=base-color, boxrule=0pt, colframe=base-color, width=6.7cm]
+				\textcolor{text2-color}{\large Formación Complementaria}
+			\end{tcolorbox}
+		\end{tcolorbox}
+
+		\vspace*{-2.5mm}
+		\begin{tcolorbox}[enhanced, colback=base-color, sharp corners=all, width=0.9\textwidth, height=2.9cm, boxrule=0pt, colframe=base-color, borderline south={3pt}{0pt}{box-color}, borderline west={4pt}{0pt}{box-color}, borderline east={3pt}{0pt}{box-color}]
+			\bigskip
+			\normalsize
+			\textcolor{text-color}{Certificado con nivel B2 de {\color{highlight-color}Inglés} por Cambridge} \smallskip\\
+			\color{base2-color} \hdashrule[0.5ex]{1\textwidth}{0.8mm}{2.5mm} \smallskip
+			\textcolor{text-color}{Primer dan de {\color{highlight-color}Iaido} (ZNKR Sete-Iai)}
+		\end{tcolorbox}
+	%	\begin{tcolorbox}[colback=box-color, sharp corners=all, width=0.9\textwidth, height=0.5cm, boxrule=0pt, colframe=box-color]
+	%	\end{tcolorbox}
+		\bigskip
+		\bigskip
+		\begin{textblock*}{7cm}(4.2cm,15.7cm)
+			\small \color{text2-color} Capacidad de abstracción
+		\end{textblock*}
+		\begin{textblock*}{7cm}(9.5cm,17.8cm)
+			\small \color{text2-color} Programación
+		\end{textblock*}
+		\begin{textblock*}{7cm}(0.2cm,17.8cm)
+			\small \color{text2-color} Pensamiento lógico
+		\end{textblock*}
+		\begin{textblock*}{7cm}(1.9cm,21.73cm)
+			\small \color{text2-color} Pensamiento crítico
+		\end{textblock*}
+		\begin{textblock*}{7cm}(7.7cm,21.8cm)
+			\small \color{text2-color} Habilidades sociales
+		\end{textblock*}
+		\begin{textblock*}{7cm}(7.3cm,20.5cm)
+			{\bigskip \color{base2-color} \hspace{1cm} \rule{5cm}{0.1cm}}
+		\end{textblock*}
+		\begin{textblock*}{7cm}(11.6cm,20.6cm)
+			\begin{tcolorbox}[left=1mm, right=1mm, top=1mm, bottom=1mm, colback=base2-color, boxrule=0pt, colframe=base2-color, width=3cm]
+			\textcolor{base-color}{\large Habilidades}
+			\end{tcolorbox}
+		\end{textblock*}
+		\hspace*{-1.4cm}
+		\centering \resizebox{0.6\textwidth}{!}{\input{img/chart.tex}}
+	\end{minipage}
+	\begin{minipage}[t]{0.35\textwidth}
+		\vspace*{-5.7cm}
+		{\bigskip \color{base2-color} \hspace{1cm} \rule{\textwidth}{0.1cm}}
+		{\vspace*{-1.18cm}
+		 \begin{tcolorbox}[left=1mm, right=1mm, top=1.4mm, bottom=0.5mm, colback=base2-color, boxrule=0pt, colframe=base2-color, width=3.1cm]
+			\textcolor{base-color}{\large Tecnologías}
+		\end{tcolorbox}}
+		
+		\bigskip
+		\large
+		\hspace{0.4cm}
+		\color{text2-color}
+		\begin{tabular}[c]{ l l }
+			\medskip
+			Linux & \score{5}{5} \\
+			\medskip
+			C/C++ & \score{5}{5} \\
+			\medskip
+			\LaTeX & \score{5}{5} \\
+			\medskip
+			Vim & \score{4}{5} \\
+			\medskip
+			Git & \score{4}{5} \\
+			\medskip
+			Python & \score{4}{5} \\
+			\medskip
+			HTML/JS & \score{4}{5} \\
+			\medskip
+			Scikit-learn & \score{3}{5} \\
+			\medskip
+			Racket & \score{3}{5} \\
+			\medskip
+			Ocaml & \score{3}{5} \\
+			\medskip
+			Julia & \score{3}{5} \\
+			\medskip
+			Erlang/OTP & \score{2}{5} \\
+			\medskip
+			Haskell & \score{2}{5} \\
+			\medskip
+			Android & \score{2}{5} \\
+		\end{tabular}
+	\end{minipage}
+	\bigskip
+	\bigskip
+	
+	\vspace*{0.2cm}
+	\begin{tcolorbox}[colback=box-color, sharp corners=all, width=\paperwidth, height=7.2cm, boxrule=0pt, colframe=box-color]
+		{\bigskip \color{base-color} \hspace*{-1cm} \rule{1.2\textwidth}{0.1cm}}
+		{\vspace*{-1.15cm}
+		 \centering
+		 \begin{tcolorbox}[left=1mm, right=1mm, top=1mm, bottom=1mm, colback=base-color, boxrule=0pt, colframe=base-color, width=2.6cm]
+			\textcolor{text2-color}{\large Proyectos}
+		 \end{tcolorbox}}
+	 	\bigskip
+	 	
+	 	\color{text-color}
+	 	\hspace*{0.1cm}
+	 	\begin{minipage}[t]{0.57\textwidth}
+	 		\vspace*{-1.1cm}
+	 		\href{https://github.com/bruno-sm/tail}{
+	 		\textcolor{highlight-color}{\textbf{tail}} \smallskip\\
+	 		\hspace*{0.1cm} \small Lenguaje especializado en IA con unión\\ \hspace*{0.1cm} e intersección de tipos graduales} \medskip\\
+	 		\href{https://github.com/bruno-sm/SFS}{
+	 		\textcolor{highlight-color}{\textbf{SFS}} \smallskip\\
+	 		\hspace*{0.1cm} \small Estudio, implementación y mejora de la\\ \hspace*{0.1cm} metaheurística Stochastic Fractal Search} \medskip\\
+ 			\href{https://github.com/bruno-sm/QAP}{
+	 		\textcolor{highlight-color}{\textbf{QAP}} \smallskip\\
+	 		\hspace*{0.1cm} \small Diferentes soluciones al problema de\\
+\hspace*{0.1cm} la asignación cuadrática}\\
+	 	\end{minipage}
+	 	\begin{minipage}[t]{0.43\textwidth}
+	 		\vspace*{0.01cm}
+	 		\href{https://github.com/bruno-sm/OrientableGameOfLife}{
+	 		\textcolor{highlight-color}{\textbf{Orientable Game of Life}} \smallskip\\
+	 		\hspace*{0.1cm} \small Implementación del juego de la vida \\\hspace*{0.1cm} sobre un toro y una esfera} \bigskip\\
+	 		\href{https://github.com/UnbreakableChain}{
+	 		\textcolor{highlight-color}{\normalsize \textbf{Unbreakable}} \smallskip\\
+	 		\hspace*{0.1cm} \small Interfaz de terminal para el método\\
+\hspace*{0.1cm} "don't break the chain"}\\
+	 	\end{minipage}
+	\end{tcolorbox}
+\clearpage
+\end{document}
